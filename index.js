@@ -42,7 +42,7 @@ app.use(session({
   }),
   secret: "IAMSARTHAKNANDE",
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   cookie: {
     secure: true, // Set to true for production as Vercel uses HTTPS
     httpOnly: true, // Protects the cookie from client-side JavaScript
