@@ -44,7 +44,9 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie: {
-    secure: 'production' === 'production',
+    secure: true, // Set to true for production as Vercel uses HTTPS
+    httpOnly: true, // Protects the cookie from client-side JavaScript
+    sameSite: 'None', // Required for cross-site cookies when using credentials
     maxAge: 1000 * 60 * 60 * 1,
   }
 }));
