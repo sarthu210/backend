@@ -20,7 +20,7 @@ const app = express();
 const port = 3000;
 
 // CORS configuration
-const allowedOrigins = ["https://interactive-learning-platfrom.vercel.app/", "http://localhost:5173"]; // Add your Vercel app URL
+const allowedOrigins = ["https://interactive-learning-platfrom.vercel.app", "http://localhost:5173"]; // Add your Vercel app URL
 
 app.use(cors({
   origin: (origin, callback) => {
