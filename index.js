@@ -26,7 +26,6 @@ app.use(cors({
   origin: allowedOrigin,
   methods: 'GET,DELETE,PATCH,POST,PUT',
   allowedHeaders: 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
-  credentials: true, // This allows cookies to be sent
 }));
 
 // Bodyparser configuration
