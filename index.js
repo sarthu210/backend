@@ -32,6 +32,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('trust proxy', true);
+app.enable('trust proxy')
 
 // Session configuration
 app.use(session({
