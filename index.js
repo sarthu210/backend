@@ -39,7 +39,7 @@ app.use(session({
   cookie: {
     maxAge: 1000 * 60 * 60 * 1,
     sameSite: 'None', // Ensure SameSite is set to None
-    secure: 'development' === 'production',
+    secure: true,
     httpOnly: true,
   }
 }));
