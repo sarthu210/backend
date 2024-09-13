@@ -33,6 +33,7 @@ app.use(cors({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(cors(corsOptions));
 
 // Session configuration
 app.use(session({
@@ -42,7 +43,7 @@ app.use(session({
   proxy: true,
   cookie: {
     maxAge: 1000 * 60 * 60 * 1,
-    secure: false, // required for cookies to work on HTTPS
+    secure: true, // required for cookies to work on HTTPS
     httpOnly: false,
     sameSite: 'none'
   }
