@@ -31,6 +31,8 @@ app.use(cors({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.set('trust proxy', true);
+
 // Session configuration
 app.use(session({
   secret: "IAMSARTHAKNANDE",
@@ -38,6 +40,9 @@ app.use(session({
   saveUninitialized: true,
   cookie: {
     maxAge: 1000 * 60 * 60 * 1,
+    sameSite: "strict",
+    secure: true,
+    httpOnly: true,
   }
 }));
 
