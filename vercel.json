@@ -2,14 +2,20 @@
   "version": 2,
   "builds": [
     {
-   "src": "index.js",
-   "use": "@vercel/node"
+      "src": "index.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-   "src": "/(.*)",
-   "dest": "index.js"
+      "src": "/(.*)",
+      "dest": "index.js",
+      "headers": {
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Origin": "https://interactive-learning-platfrom.vercel.app",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE",
+        "Access-Control-Allow-Headers": "Content-Type"
+      }
     }
   ]
-   }
+}
