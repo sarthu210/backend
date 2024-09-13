@@ -33,8 +33,6 @@ app.use(cors({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.set('trust proxy', true);
-app.enable('trust proxy')
 
 // Session configuration
 app.use(session({
@@ -44,7 +42,7 @@ app.use(session({
   proxy: true,
   cookie: {
     maxAge: 1000 * 60 * 60 * 1,
-    secure: true, // required for cookies to work on HTTPS
+    secure: false, // required for cookies to work on HTTPS
     httpOnly: false,
     sameSite: 'none'
   }
