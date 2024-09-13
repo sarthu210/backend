@@ -43,7 +43,7 @@ app.use(session({
     maxAge: 1000 * 60 * 60 * 1,
     secure: true, // required for cookies to work on HTTPS
     httpOnly: false,
-    sameSite: 'none'
+    sameSite: 'Lax'
   }
 }));
 
