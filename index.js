@@ -20,16 +20,10 @@ const app = express();
 const port = 3000;
 
 // CORS configuration
-const allowedOrigins = ["https://interactive-learning-platfrom.vercel.app", "http://localhost:5173"]; // Add your Vercel app URL
+const allowedOrigin = "https://interactive-learning-platfrom.vercel.app"; // Set your Vercel app URL
 
 app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: allowedOrigin,
   credentials: true,
 }));
 
@@ -45,7 +39,8 @@ app.use(session({
   cookie: {
     maxAge: 1000 * 60 * 60 * 1,
     sameSite: 'None', // Ensure SameSite is set to None
-    secure: 'development' === 'production'
+    secure: 'development' === 'production',
+    httpOnly: true,
   }
 }));
 
