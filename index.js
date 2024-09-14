@@ -22,7 +22,11 @@ const port = 3000;
 // CORS configuration
 const allowedOrigin = "https://interactive-learning-platfrom.vercel.app"; // Set your Vercel app URL
 
-app.use(cors());
+app.use(cors({
+  origin: allowedOrigin,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type' , 'Authorization'],
+}));
 // Bodyparser configuration
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
