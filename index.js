@@ -59,6 +59,15 @@ app.use('/course', getEnrollInfo);
 app.use('/level', levelSubmit);
 app.use('/level', getLevels);
 
+app.get('/session-data', (req, res) => {
+  // Send session data to the frontend
+  if (req.session.user) {
+    res.json(req.session.user);
+  } else {
+    res.status(401).send('No session data available.');
+  }
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
