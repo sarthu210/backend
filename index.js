@@ -61,8 +61,8 @@ app.use('/level', getLevels);
 
 app.get('/session-data', (req, res) => {
   // Send session data to the frontend
-  if (req.session.user) {
-    res.json(req.session.user);
+  if (req.session) {
+    res.json(req.session);
   } else {
     res.status(401).send('No session data available.');
   }
