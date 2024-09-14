@@ -22,12 +22,7 @@ const port = 3000;
 // CORS configuration
 const allowedOrigin = "https://interactive-learning-platfrom.vercel.app"; // Set your Vercel app URL
 
-app.use(cors({
-  origin: allowedOrigin,
-  methods: 'GET,DELETE,PATCH,POST,PUT',
-  allowedHeaders: 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
-}));
-
+app.use(cors());
 // Bodyparser configuration
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -43,7 +38,7 @@ app.use(session({
     maxAge: 1000 * 60 * 60 * 1,
     secure: true, // required for cookies to work on HTTPS
     httpOnly: false,
-    sameSite: 'Lax'
+    sameSite: 'none'
   }
 }));
 
