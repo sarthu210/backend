@@ -25,7 +25,7 @@ const allowedOrigin = "https://interactive-learning-platfrom.vercel.app"; // Set
 app.use(cors({
   origin: allowedOrigin,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type' , 'Authorization'],
+  allowedHeaders: ['Content-Type' , 'Authorization', 'Set-Cookie','Cookie','Cache-Control','connect.sid','Expires','Pragma'],
 }));
 // Bodyparser configuration
 app.use(bodyParser.json());
